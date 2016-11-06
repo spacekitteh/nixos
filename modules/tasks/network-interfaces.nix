@@ -329,6 +329,7 @@ in
             after = [ "sys-subsystem-net-devices-${i.name}.device" ];
             serviceConfig.Type = "oneshot";
             serviceConfig.RemainAfterExit = true;
+            serviceConfig.StartLimitIntervalSec = 3;
             path = [ pkgs.iproute pkgs.gawk ];
             script =
               ''
